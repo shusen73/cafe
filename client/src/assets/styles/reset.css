@@ -1,0 +1,125 @@
+/* http://meyerweb.com/eric/tools/css/reset/ v2.0 | 20110126 */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  /*margin: 0;*/ /* (commented) could also remove default margins   */
+  padding: 0; /* eliminate default padding                      */
+  border: 0; /* remove default borders                         */
+  font-size: 100%; /* inherit font size                              */
+  font: inherit; /* inherit font face                              */
+  vertical-align: baseline; /* align elements to text baseline         */
+}
+/* HTML5 elements should render as blocks in older browsers             */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+} /* reset line height                  */
+ol,
+ul {
+  list-style: none;
+} /* remove default list bullets        */
+blockquote,
+q {
+  quotes: none;
+} /* remove default quote characters    */
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+} /* clear pseudo quotes */
+table {
+  border-collapse: collapse; /* collapse table borders             */
+  border-spacing: 0; /* remove spacing between cells       */
+}
