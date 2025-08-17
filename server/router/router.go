@@ -24,6 +24,7 @@ func NewRouter(staticDir string) *gin.Engine {
 	api := r.Group("/api")
 	{
 		api.GET("/health", handlers.Health)
+		api.GET("/menu", handlers.MenuList)
 	}
 
 	// --- Static files for the built frontend
@@ -44,3 +45,4 @@ func NewRouter(staticDir string) *gin.Engine {
 
 	return r
 }
+
