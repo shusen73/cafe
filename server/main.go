@@ -4,24 +4,25 @@ import (
 	"log"
 	"os"
 
+	"cafe/db"
 	"cafe/router"
 )
 
 func main() {
-	publicDir := "server/public"
-	if v := os.Getenv("PUBLIC_DIR"); v != "" {
-		publicDir = v
+	// Ensure DB is ready (migrated + seeded)
+	if _, err := db.Connect(); err != nil {
+		log.Fatal(err)
 	}
 
-	r := router.NewRouter(publicDir)
+	r := router.Setup()
 
-	addr := ":8080"
-	if v := os.Getenv("PORT"); v != "" {
-		addr = v
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
 	}
 
-	log.Printf("serving frontend from %q on %s\n", publicDir, addr)
-	if err := r.Run(addr); err != nil {
+	log.Printf("Server listening on :%s", port)
+	if err := r.Run(":" + port); err != nil {
 		log.Fatal(err)
 	}
 }

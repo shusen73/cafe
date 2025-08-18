@@ -1,2 +1,4 @@
 client/node_modules
 .DS_Store
+server/public
+server/coffeeshop.db

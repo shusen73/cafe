@@ -1,20 +1,28 @@
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
-import { resolve } from "node:path";
+import path from "path";
 
 export default defineConfig({
   plugins: [vue()],
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+    },
+  },
   server: {
     port: 5173,
     strictPort: true,
     proxy: {
-      // Dev-only: forward API calls to Go backend
-      "/api": "http://localhost:8080",
+      // All calls to /api in dev go to the Go server
+      "/api": {
+        target: "http://localhost:8080",
+        changeOrigin: true,
+      },
     },
   },
   build: {
-    // IMPORTANT: output the built app into the Go server's static dir
-    outDir: resolve(__dirname, "../server/public"),
+    // Output into backend static folder
+    outDir: path.resolve(__dirname, "../server/public"),
     emptyOutDir: true,
   },
 });
